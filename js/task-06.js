@@ -6,11 +6,13 @@ function onInputBlur(event) {
     const datasetLength = event.currentTarget.dataset.length;
     const stringLength = event.currentTarget.value.length;
 
-    if(Number(stringLength) === Number(datasetLength)){
-        input.classList.add("valid");
-        input.classList.remove("invalid");
+    if(stringLength === Number(datasetLength)){
+        addClassListName("valid", "invalid")
     } else {
-        input.classList.add("invalid");
-        input.classList.remove("valid");
+        addClassListName("invalid", "valid")
     }
+}
+function addClassListName(valid, invalid){
+    input.classList.add(valid);
+    input.classList.remove(invalid);
 }
